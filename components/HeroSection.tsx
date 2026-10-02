@@ -22,7 +22,7 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4,
+        staggerChildren: 0.15,
         delayChildren: 0.5,
       },
     },
@@ -33,7 +33,7 @@ export function HeroSection() {
     visible: { 
       clipPath: "inset(0 0% 0 0)", 
       opacity: 1,
-      transition: { duration: 1.2, ease: "linear" } 
+      transition: { duration: 0.6, ease: "linear" } 
     },
   };
 
@@ -41,7 +41,7 @@ export function HeroSection() {
     hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" }
     },
   };
 
@@ -50,7 +50,7 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.6,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -60,7 +60,7 @@ export function HeroSection() {
     visible: { 
       pathLength: 1, 
       opacity: 1,
-      transition: { duration: 1.5, ease: "easeInOut" } 
+      transition: { duration: 0.5, ease: "easeInOut" } 
     },
   };
 
@@ -71,7 +71,7 @@ export function HeroSection() {
       filter: "blur(0px)", 
       opacity: 1, 
       rotate: -1,
-      transition: { duration: 1.2, ease: "easeOut" } 
+      transition: { duration: 0.6, ease: "easeOut" } 
     },
   };
 

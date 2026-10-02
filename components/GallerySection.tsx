@@ -48,7 +48,7 @@ export function GallerySection() {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
@@ -56,7 +56,7 @@ export function GallerySection() {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { 
       pathLength: 1, opacity: 1, 
-      transition: { duration: 1.5, ease: "linear" } 
+      transition: { duration: 0.5, ease: "linear" } 
     },
   };
 
@@ -72,7 +72,7 @@ export function GallerySection() {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { 
       pathLength: 1, opacity: 1, 
-      transition: { duration: 1.2, ease: "easeInOut" } 
+      transition: { duration: 0.6, ease: "easeInOut" } 
     },
   };
 
@@ -83,7 +83,7 @@ export function GallerySection() {
       filter: "blur(0px)", 
       opacity: 1, 
       rotate: -2,
-      transition: { duration: 1.2, ease: "easeOut" } 
+      transition: { duration: 0.6, ease: "easeOut" } 
     },
   };
 
@@ -94,7 +94,7 @@ export function GallerySection() {
       filter: "blur(0px)", 
       opacity: 1, 
       rotate: 3,
-      transition: { duration: 1.2, ease: "easeOut" } 
+      transition: { duration: 0.6, ease: "easeOut" } 
     },
   };
 

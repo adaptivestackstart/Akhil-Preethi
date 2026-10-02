@@ -13,7 +13,7 @@ export function CoupleSection() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.5 }}
       >
         <Image 
           src="/flower_3.jpg" 
@@ -49,7 +49,7 @@ export function CoupleSection() {
               initial={{ clipPath: "inset(0 100% 0 0)" }}
               whileInView={{ clipPath: "inset(0 0% 0 0)" }}
               viewport={{ once: true, amount: 0.8 }}
-              transition={{ duration: 1.5, ease: "linear" }}
+              transition={{ duration: 0.5, ease: "linear" }}
             >
               Akhil
             </motion.h1>
@@ -92,7 +92,7 @@ export function CoupleSection() {
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeInOut", delay: 4.2 }}
+                transition={{ duration: 0.5, ease: "easeInOut", delay: 4.2 }}
               />
               {/* Line continuing downwards */}
               <motion.path 

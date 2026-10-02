@@ -8,7 +8,7 @@ export function FamilySection() {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
@@ -16,7 +16,7 @@ export function FamilySection() {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { 
       pathLength: 1, opacity: 1, 
-      transition: { duration: 1.5, ease: "linear" } 
+      transition: { duration: 0.5, ease: "linear" } 
     },
   };
 
@@ -24,7 +24,7 @@ export function FamilySection() {
     hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, y: 0, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+      transition: { duration: 0.5, ease: "easeOut" } 
     },
   };
 
@@ -34,7 +34,7 @@ export function FamilySection() {
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         className="w-full flex flex-col items-center relative"
       >
         {/* Background Floral Asset */}

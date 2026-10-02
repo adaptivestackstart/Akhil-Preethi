@@ -70,15 +70,15 @@ export function WeddingIntro({ onStateChange }: WeddingIntroProps) {
 
         // 0.9s - 1.7s: Botanical drawing
         animate(".ink-dot-1", { scale: 1, opacity: 0.8 }, { duration: 0.1 });
-        animate(".botanical-path", { pathLength: 1 }, { duration: 0.8, ease: "easeInOut" });
+        animate(".botanical-path", { pathLength: 1 }, { duration: 0.5, ease: "easeInOut" });
         await new Promise(r => setTimeout(r, 800));
         animate(".ink-dot-1", { scale: 0, opacity: 0 }, { duration: 0.1 });
         if (!isMounted) return;
 
         // 1.7s - 2.5s: Flower assets slowly fading in like they belong on the paper
-        animate(".flower-1", { opacity: 0.45, scale: 1 }, { duration: 0.8, ease: "easeOut" });
-        animate(".flower-2", { opacity: 0.5, scale: 1 }, { duration: 0.8, ease: "easeOut" });
-        animate(".flower-3", { opacity: 0.35, scale: 1 }, { duration: 0.8, ease: "easeOut" });
+        animate(".flower-1", { opacity: 0.45, scale: 1 }, { duration: 0.5, ease: "easeOut" });
+        animate(".flower-2", { opacity: 0.5, scale: 1 }, { duration: 0.5, ease: "easeOut" });
+        animate(".flower-3", { opacity: 0.35, scale: 1 }, { duration: 0.5, ease: "easeOut" });
         await new Promise(r => setTimeout(r, 800));
         if (!isMounted) return;
 

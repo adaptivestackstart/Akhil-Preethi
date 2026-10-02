@@ -9,7 +9,7 @@ export function StorySection() {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.4, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
@@ -17,7 +17,7 @@ export function StorySection() {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { 
       pathLength: 1, opacity: 1, 
-      transition: { duration: 1.5, ease: "linear" } 
+      transition: { duration: 0.5, ease: "linear" } 
     },
   };
 
@@ -41,7 +41,7 @@ export function StorySection() {
     hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, y: 0, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+      transition: { duration: 0.5, ease: "easeOut" } 
     },
   };
 
@@ -52,7 +52,7 @@ export function StorySection() {
       filter: "blur(0px)", 
       opacity: 1, 
       rotate: 2,
-      transition: { duration: 1.2, ease: "easeOut" } 
+      transition: { duration: 0.6, ease: "easeOut" } 
     },
   };
 
@@ -65,7 +65,7 @@ export function StorySection() {
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         className="relative w-full h-full flex flex-col items-center"
       >
         {/* Background Floral Assets */}

@@ -91,7 +91,7 @@ export function Cursor() {
           gsap.to(b, {
             x: 0,
             y: 0,
-            duration: 0.8,
+            duration: 0.5,
             ease: "elastic.out(1, 0.3)",
           });
         });

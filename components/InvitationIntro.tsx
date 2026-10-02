@@ -15,7 +15,7 @@ export function InvitationIntro() {
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1.2, ease: cinematicEase }}
+        transition={{ duration: 0.6, ease: cinematicEase }}
         className="relative max-w-xl"
       >
         <p className="font-sans text-[11px] uppercase tracking-[0.36em] text-gold-deep">
