@@ -1,26 +1,177 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ivory: #F6F0E4;
+  --color-paper: #EFE7D7;
+  --color-paper-dark: #E8DDC9;
+  --color-ink: #1E1C18;
+  --color-olive: #73735c;
+  --color-brown: #8a705d;
+  --color-gold: #b0976d;
+  --color-night: #121412;
+  --color-champagne: #F2E3C6;
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-script: var(--font-script);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ivory: #F6F0E4;
+  --paper: #EFE7D7;
+  --paper-dark: #E8DDC9;
+  --ink: #1E1C18;
+  --olive: #73735c;
+  --brown: #8a705d;
+  --gold: #b0976d;
+  --night: #121412;
+  --champagne: #F2E3C6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--olive) 20%, transparent);
+  color: var(--ink);
+}
+
+.font-serif {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+/* Paper Grain Texture */
+.paper-grain {
+  position: relative;
+}
+
+.paper-grain::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 50;
+}
+
+/* Custom Cursor */
+@media (pointer: fine) {
+  body.custom-cursor {
+    cursor: none;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  mix-blend-mode: multiply;
+}
+
+.cursor-dot.hovering {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 1px solid var(--ink);
+}
+
+/* Hand-drawn borders */
+.sketch-border {
+  border: 1px solid var(--ink);
+  border-radius: 2px 255px 3px 25px / 255px 5px 225px 3px;
+}
+
+.sketch-border-2 {
+  border: 1px solid var(--ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.photo-paper {
+  background: var(--ivory);
+  padding: 8px 8px 32px 8px;
+  box-shadow: 
+    1px 2px 4px rgba(0,0,0,0.05),
+    2px 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Hide scrollbar for cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--paper-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brown);
+}
+
+.gold-foil-text {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-foil-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(212, 175, 55, 0.4) 45%,
+    rgba(253, 244, 227, 0.6) 50%,
+    rgba(212, 175, 55, 0.4) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: foilSweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes foilSweep {
+  0% { background-position: -100% 0; opacity: 0; }
+  10% { opacity: 1; }
+  30% { background-position: 200% 0; opacity: 1; }
+  40% { opacity: 0; }
+  100% { background-position: 200% 0; opacity: 0; }
 }
